@@ -1,0 +1,30 @@
+/* input{
+    border: 1px dashed black;
+} */
+:host{
+    display: flex;
+    /* justify-content: stretch; */
+    overflow-x: auto;
+}
+
+.container{
+    background-color:white;
+    padding: 5px o;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    display: grid;
+    place-content: stretch;
+    place-items: center;
+    grid-gap: 0.4rem;
+    grid-auto-flow:row;
+    /* grid-template-columns: repeat(5,50px); */
+  
+}
+
+/* .heighlight{
+    background-color: tomato;
+    height: 8px;
+    width: 4rem;
+} */
