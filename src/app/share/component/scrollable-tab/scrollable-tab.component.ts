@@ -4,6 +4,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 export interface TopMenu {
   title: string;
   link?: string;
+  id?: number;
 }
 
 interface Dict {
@@ -15,12 +16,10 @@ interface Dict {
   templateUrl: './scrollable-tab.component.html',
   styleUrls: ['./scrollable-tab.component.css']
 })
-export class ScrollableTabComponent implements OnInit, OnChanges{
+export class ScrollableTabComponent implements OnInit{
 
   constructor() { }
-  ngOnChanges(changes: SimpleChanges): void {
-    throw new Error('Method not implemented.');
-  }
+ 
   ngOnInit(): void {
   
   }

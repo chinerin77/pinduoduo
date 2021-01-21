@@ -1,0 +1,36 @@
+
+<!--  <app-horizontal-grid >
+  <div appGridItem *ngFor="let item of channels">
+    <img [src]="item.icon" alt="" appGridItemImage="2rem" fitMode="cover">
+    <span appGridItemTitle="0.6rem">{{item.title}}</span>
+</div>
+<div appGridItem>
+  <div appGridItemImage='4rem' style="background-color: red;"></div>
+  <span appGridItemTitle="0.6rem">hello</span>
+</div>
+ </app-horizontal-grid> -->
+
+ <div *ngIf="seleteTabLink == 'hot' else other"> 
+  <app-image-slider [sliders]="imageSliders" #imageSlider></app-image-slider>
+  
+  <app-horizontal-grid >
+    <div appGridItem *ngFor="let item of channels">
+      <img [src]="item.icon" alt="" appGridItemImage="2rem" fitMode="cover">
+      <span appGridItemTitle="0.6rem">{{item.title}}</span>
+  </div>
+  <div appGridItem>
+    <div appGridItemImage='4rem' style="background-color: red;"></div>
+    <span appGridItemTitle="0.6rem">{{ this.seleteTabLink }}</span>
+  </div>
+
+ 
+   </app-horizontal-grid>
+
+ </div>
+<ng-template #other>
+<span>Other Works!</span>  
+<span>{{seleteTabLink}}</span>
+  
+</ng-template>
+
+<router-outlet></router-outlet>

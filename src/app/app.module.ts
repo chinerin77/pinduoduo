@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ShareModule } from './share/share.module';
 import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } from './share';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeModule } from './home/home.module';
 
 //import {GridItemDirective, GridItemImageDirective, GridItemTitleDirective} from './share';
 
@@ -18,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     ShareModule,
     AppRoutingModule,
-   
+    HomeModule
 
   ],
   providers: [],
