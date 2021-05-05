@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Channel, ImageSlider, ImageSliderComponent, TopMenu } from 'src/app/share';
+import { HomeService, token } from '../services';
 
 @Component({
   selector: 'app-h-container',
@@ -9,48 +10,22 @@ import { Channel, ImageSlider, ImageSliderComponent, TopMenu } from 'src/app/sha
 })
 export class HContainerComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private services: HomeService,
+    @Inject(token) private baseUrl:string) { }
 
-  ngOnInit() {
-  }
   title = 'pinduoduo';
   @ViewChild('imageSlider')
   imageSlider!: ImageSliderComponent;
-
-  topMeues: TopMenu[]=[
-    {title:'热门',
-    link:'hot',
-    id:1 },
-
-    {title:'男装',
-    link:'men',
-    id: 2},
-
-    {title:'百货',
-    link:'department',
-
-    id:3},
-    {title:'男装',
-    link:''},
-    {title:'男装',
-    link:''},
-    {title:'男装',
-    link:''},
-    {title:'男装',
-    link:''},
-    {title:'男装',
-    link:''},
-    {title:'男装',
-    link:''},
-    {title:'男装',
-    link:''}
-  ];
-
-
+  topMeues: TopMenu[]=[];
 
   scrollableColor = 'grey';
 
   
+  ngOnInit() { 
+    this.topMeues = this.services.getTapMenu();
+    //console.log(this.baseUrl);
+  }
+
 
   handleTabSelected(topMenu:TopMenu){
     this.router.navigate(['home',topMenu.link])
@@ -58,9 +33,8 @@ export class HContainerComponent implements OnInit {
 
 
   ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
-    console.log(this.imageSlider);
+    
+    //console.log(this.imageSlider);
     
   }
 

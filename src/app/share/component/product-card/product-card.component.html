@@ -1,0 +1,9 @@
+<div class="container">
+  <img [src]=production.imageLink class="production-image">
+  <div class="production-title"> {{production.title}} </div>
+  <div class="production-tag"> 
+    <span *ngFor ="let tag of production.tags">{{tag}} </span>
+    
+  </div>
+  <div class="production-price"> {{production.price}} </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, Output } from '@angular/core';
 // import { EventEmitter } from 'events';
 // import { Confirmable, Emoji } from '../../decorators';
 
@@ -13,7 +13,8 @@ export interface Channel {
 @Component({
   selector: 'app-horizontal-grid',
   templateUrl: './horizontal-grid.component.html',
-  styleUrls: ['./horizontal-grid.component.css']
+  styleUrls: ['./horizontal-grid.component.css'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class HorizontalGridComponent implements OnInit {
   [x: string]: any;
@@ -55,6 +56,7 @@ export class HorizontalGridComponent implements OnInit {
 
   handleScroll(ev:any) {
     this.sliderMargin = `0 ${100 * ev.target.scrollLeft / ev.target.scrollWidth}%`
+    this.sliderMargin = `0 ${(100 * ev.target.scrollLeft) /ev.target.scrollWidth}%`;
 
   }
 

@@ -1,3 +1,15 @@
 .active{
     background-color: red;
 }
+/* .ad-container{
+    height: 20px;
+} */
+
+.adImage{
+    height: 50px;
+    object-fit:cover;
+    width: 100%;
+}
+
+
+

@@ -26,7 +26,7 @@ ngOnInit(): void {
 
 @HostListener('click',['$event.target'])
     handleClick(ev: any){
-        console.log(ev)
+       // console.log(ev)
 
     }
 }

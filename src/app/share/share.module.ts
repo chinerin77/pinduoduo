@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HorizontalGridComponent, ImageSliderComponent, ScrollableTabComponent } from './component';
+import { BackButtonComponent, CountDownComponent, FooterComponent, HorizontalGridComponent, ImageSliderComponent, ProductCardComponent, ScrollableTabComponent, VerticalGridComponent } from './component';
 import {GridItemDirective, GridItemImageDirective, GridItemTitleDirective} from './directives'
+import { TagDirective } from './directives/tag.directive';
 
 
 
@@ -13,7 +14,13 @@ import {GridItemDirective, GridItemImageDirective, GridItemTitleDirective} from 
     HorizontalGridComponent,
     GridItemDirective,
     GridItemImageDirective,
-    GridItemTitleDirective
+    GridItemTitleDirective,
+    CountDownComponent,
+    FooterComponent,
+    VerticalGridComponent,
+    ProductCardComponent,
+    BackButtonComponent,
+    TagDirective
   ],
   imports: [
     CommonModule,
@@ -27,7 +34,14 @@ import {GridItemDirective, GridItemImageDirective, GridItemTitleDirective} from 
     HorizontalGridComponent,
     GridItemDirective,
     GridItemImageDirective,
-    GridItemTitleDirective
+    GridItemTitleDirective,
+    CountDownComponent,
+    FooterComponent,
+    VerticalGridComponent,
+    ProductCardComponent,
+    BackButtonComponent,
+    TagDirective
+
   ]
 })
 export class ShareModule { }

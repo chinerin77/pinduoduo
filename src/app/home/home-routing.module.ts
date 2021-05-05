@@ -1,6 +1,7 @@
+import { ParseError } from '@angular/compiler';
 import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HContainerComponent, HomeDetailComponent, HomeGrandComponent } from './components';
+import { HContainerComponent, HomeDetailComponent, HomeGrandComponent, ParentComponent } from './components';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
         ]
       }
     ]
+  },
+  {
+    path: 'change-detection',
+    pathMatch: 'full',
+    component: ParentComponent
   }
 ];
 

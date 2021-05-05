@@ -1,4 +1,4 @@
-import { EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { Component, Input, OnInit, Output } from '@angular/core';
 
 export interface TopMenu {
@@ -14,7 +14,8 @@ interface Dict {
 @Component({
   selector: 'app-scrollable-tab',
   templateUrl: './scrollable-tab.component.html',
-  styleUrls: ['./scrollable-tab.component.css']
+  styleUrls: ['./scrollable-tab.component.css'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class ScrollableTabComponent implements OnInit{
 

@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RecommendRoutingModule } from './recommend-routing.module';
 import { ShareModule } from '../share/share.module';
+import { RecommendContainerComponent } from './component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    RecommendContainerComponent
+  ],
   imports: [
     ShareModule,
     RecommendRoutingModule

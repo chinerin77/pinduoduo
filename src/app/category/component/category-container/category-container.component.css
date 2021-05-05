@@ -1,0 +1,6 @@
+:host{
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+    flex-direction: column;
+}

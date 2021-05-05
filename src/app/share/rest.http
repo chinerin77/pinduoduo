@@ -1,0 +1,11 @@
+GET https://jsonplaceholder.typicode.com/posts HTTP/1.1
+
+###
+POST https://jsonplaceholder.typicode.com/posts HTTP/1.1
+
+###
+GET https://jsonplaceholder.typicode.com/jsonplaceholder.typicode.com/jsonplaceholder.typicode.com/users?userId=1  HTTP/1.1
+
+
+
+

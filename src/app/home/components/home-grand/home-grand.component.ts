@@ -1,8 +1,15 @@
-import { Component, Injectable, Injector, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Injectable, Injector, Input, OnInit } from '@angular/core';
+import { HomeService } from '../services';
 
 @Injectable()
 class Product{
 constructor(private name: String){}
+
+}
+
+export interface user{
+  userId: number;
+  name: string;
 
 }
 
@@ -22,35 +29,26 @@ class PurchaseOrder {
 @Component({
   selector: 'app-home-grand',
   templateUrl: './home-grand.component.html',
-  styleUrls: ['./home-grand.component.css']
+  styleUrls: ['./home-grand.component.css'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class HomeGrandComponent implements OnInit {
   obj={
     productId:2,productName:'xx', model:'s',type:'q'
   };
 
-  constructor() { }
+  @Input() users: user[]=[];
+
+  constructor(private service: HomeService, private cd: ChangeDetectorRef) { }
 
   
 
   ngOnInit() {
-    const injector =Injector.create({
-      providers:[
-        {
-          provide: Product,
-          useFactory:()=>{
-            return new Product('大米')
-          },
-          deps: []
-        },
-        {
-          provide: PurchaseOrder,
-          useClass: PurchaseOrder,
-          deps:[Product]
-        }
-      ]
-    });
-    console.log(injector)
-  }
+    this.service.getUsers().subscribe(tabs => {this.users=tabs;
+    this.cd.markForCheck()});
+  
+
+  };
+
 
 }

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { HomeRoutingModule } from './home-routing.module';
 import { ShareModule } from '../share';
-import { HContainerComponent, HomeDetailComponent, HomeGrandComponent} from './components';
+import { ChildComponent, HContainerComponent, HomeDetailComponent, HomeGrandComponent, ParentComponent} from './components';
 import { FormsModule } from '@angular/forms';
+import { HomeService, token } from './components/services';
 //import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } from '../share';
 
 
@@ -12,13 +13,18 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     HContainerComponent,
     HomeDetailComponent,
-    HomeGrandComponent
+    HomeGrandComponent,
+    ParentComponent,
+    ChildComponent
   
   ],
   imports: [
     ShareModule,
     HomeRoutingModule,
     FormsModule
+  ],
+  providers:[
+    {provide: token,useValue:'http://local.dev'}
   ]
 
 })
