@@ -46,7 +46,7 @@ export class HomeGrandComponent implements OnInit {
   ngOnInit() {
     this.service.getUsers().subscribe(tabs => {this.users=tabs;
     this.cd.markForCheck()});
-  
+  console.log("for test git");
 
   };
 
